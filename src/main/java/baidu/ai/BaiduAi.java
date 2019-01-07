@@ -4,9 +4,9 @@ import com.baidu.aip.imageclassify.AipImageClassify;
 import com.baidu.aip.ocr.AipOcr;
 
 public class BaiduAi {
-    private static final String APP_ID = "15340554";
-    private static final String API_KEY = "f3hvVD2AIjs1V4UyEUh8m7UO";
-    private static final String SECRET_KEY = "iQiSEk0GY3l57Eu5xkdG2sRRzFkkTrSf";
+    private static String APP_ID = "15340554";
+    private static String API_KEY = "f3hvVD2AIjs1V4UyEUh8m7UO";
+    private static String SECRET_KEY = "iQiSEk0GY3l57Eu5xkdG2sRRzFkkTrSf";
 
     private static AipImageClassify imageClient;
 
@@ -14,6 +14,12 @@ public class BaiduAi {
 
     private BaiduAi(){
 
+    }
+
+    public static void init(String appId, String apiKey, String secretKey){
+        APP_ID = appId;
+        API_KEY = apiKey;
+        SECRET_KEY = secretKey;
     }
 
     public static AipImageClassify getImageClient() {

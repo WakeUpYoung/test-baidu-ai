@@ -5,7 +5,7 @@ import java.util.List;
 public class AdvanceResult {
     private Long logId;
 
-    private String resultNum;
+    private String wordsResultNum;
 
     private List<WordsResult> wordsResult;
 
@@ -17,12 +17,12 @@ public class AdvanceResult {
         this.logId = logId;
     }
 
-    public String getResultNum() {
-        return resultNum;
+    public String getWordsResultNum() {
+        return wordsResultNum;
     }
 
-    public void setResultNum(String resultNum) {
-        this.resultNum = resultNum;
+    public void setWordsResultNum(String wordsResultNum) {
+        this.wordsResultNum = wordsResultNum;
     }
 
     public List<WordsResult> getWordsResult() {

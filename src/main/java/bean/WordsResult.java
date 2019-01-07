@@ -10,8 +10,6 @@ public class WordsResult {
 
     private ArrayList<CharValue> characters;
 
-    private ArrayList<VertexesLocation> vertexesLocation;
-
     public String getWords() {
         return words;
     }
@@ -36,11 +34,4 @@ public class WordsResult {
         this.characters = characters;
     }
 
-    public ArrayList<VertexesLocation> getVertexesLocation() {
-        return vertexesLocation;
-    }
-
-    public void setVertexesLocation(ArrayList<VertexesLocation> vertexesLocation) {
-        this.vertexesLocation = vertexesLocation;
-    }
 }
