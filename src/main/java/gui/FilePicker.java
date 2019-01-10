@@ -44,13 +44,11 @@ public class FilePicker extends JPanel implements ActionListener {
                 for (File handleImg : file.listFiles()){
                     if (handleImg.getName().contains(".jpg")){
                         SingleHandler.startHandle(handleImg);
-                        log.append("处理 : " + handleImg.getName());
                     }
                 }
             }else if(file.isFile()){
                 fileName.setText(file.getAbsolutePath());
                 SingleHandler.startHandle(file);
-                log.append("处理 : " + file.getName());
             }
             log.append("处理完毕，耗时:" + (System.currentTimeMillis() - start));
         }
