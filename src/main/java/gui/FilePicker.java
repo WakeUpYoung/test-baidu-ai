@@ -39,6 +39,7 @@ public class FilePicker extends JPanel implements ActionListener {
         File file=jfc.getSelectedFile();
         long start = System.currentTimeMillis();
         if (file != null){
+            log.append("开始处理。。。" + "\n");
             if(file.isDirectory()){
                 fileName.setText(file.getAbsolutePath());
                 for (File handleImg : file.listFiles()){
