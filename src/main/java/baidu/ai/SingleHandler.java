@@ -35,8 +35,10 @@ public class SingleHandler {
         while (iterator.hasNext()){
             WordsResult wordsResult = iterator.next();
             String words = wordsResult.getWords();
-            Pattern pattern = Pattern.compile("[a-z/]");
-            if (words.equals("00 : 00")){  // 不能匹配时间
+            Pattern pattern = Pattern.compile("[a-z/]");  // 不匹配小写字母
+            Pattern timePattern = Pattern.compile("[0-9]{2}:[0-9]{2}"); // 不匹配时间
+            if (timePattern.matcher(words).find()){  // 不能匹配时间
+                System.out.println("匹配到时间并删除");
                 iterator.remove();
                 continue;
             }
@@ -55,6 +57,12 @@ public class SingleHandler {
             for (CharValue charValue : wordsResult.getCharacters()){
                 if (charValue.getCharacter().equals(".")){
                     continue;
+                }
+                if (charValue.getCharacter().equals("O")){ // 如果是字母O ，替换成数字0
+                    charValue.setCharacter("0");
+                }
+                if (charValue.getCharacter().equals("I")){ // 如果字母是I，修改成数字1
+                    charValue.setCharacter("1");
                 }
                 WordLocation location = charValue.getLocation();
                 int y = location.getTop();
