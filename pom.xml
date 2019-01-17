@@ -6,7 +6,7 @@
 
     <groupId>com.wangyu</groupId>
     <artifactId>test</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <properties>
         <baidu.ai.version>4.10.0</baidu.ai.version>
