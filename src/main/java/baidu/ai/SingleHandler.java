@@ -25,7 +25,8 @@ public class SingleHandler {
         xmlBindBean.setFolder(image.getParentFile().getName());
         xmlBindBean.setPath(image.getAbsolutePath());
         String str = jsonObject.toString().replace("char", "character");
-//        System.out.println(str);
+        // 打印结果
+        System.out.println(str);
         AdvanceResult advanceResult = JSON.parseObject(str, new TypeReference<AdvanceResult>() {
         });
         if (advanceResult.getWordsResult() == null){
@@ -89,5 +90,6 @@ public class SingleHandler {
         options.put("recognize_granularity", "small");
         options.put("language_type", "ENG");
         return ocrClient.general(image, options);
+//        return ocrClient.accurateGeneral(image, options);
     }
 }
