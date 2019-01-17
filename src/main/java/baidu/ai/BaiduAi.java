@@ -20,6 +20,7 @@ public class BaiduAi {
         APP_ID = appId;
         API_KEY = apiKey;
         SECRET_KEY = secretKey;
+        imageClient = new AipImageClassify(APP_ID, API_KEY, SECRET_KEY);
     }
 
     public static AipImageClassify getImageClient() {

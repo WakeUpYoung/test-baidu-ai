@@ -67,9 +67,9 @@ public class LoginPanel extends JPanel {
 
         // 点击事件
         loginButton.addActionListener(e -> {
-            String appIdInput = appIdText.getText();
-            String apiKeyInput = apiKeyText.getText();
-            String secretInput = secretText.getText();
+            String appIdInput = appIdText.getText().trim();
+            String apiKeyInput = apiKeyText.getText().trim();
+            String secretInput = secretText.getText().trim();
             if (!appIdInput.equals("") && !apiKeyInput.equals("") && !secretInput.equals("")){
                 BaiduAi.init(appIdInput, apiKeyInput, secretInput);
             }

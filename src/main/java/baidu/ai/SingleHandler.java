@@ -25,7 +25,7 @@ public class SingleHandler {
         xmlBindBean.setFolder(image.getParentFile().getName());
         xmlBindBean.setPath(image.getAbsolutePath());
         String str = jsonObject.toString().replace("char", "character");
-//        System.out.println(str);
+        System.out.println(str);
         AdvanceResult advanceResult = JSON.parseObject(str, new TypeReference<AdvanceResult>() {
         });
         if (advanceResult.getWordsResult() == null){
