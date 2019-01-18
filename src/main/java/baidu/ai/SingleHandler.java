@@ -37,13 +37,14 @@ public class SingleHandler {
             WordsResult wordsResult = iterator.next();
             String words = wordsResult.getWords();
             Pattern pattern = Pattern.compile("[a-z/]");  // 不匹配小写字母
-            Pattern timePattern = Pattern.compile("[0-9]{2}:[0-9]{2}"); // 不匹配时间
+            Pattern timePattern = Pattern.compile("[0-9]{2}[ ]?:[ ]?[0-9]{2}"); // 不匹配时间
+            Pattern upperCasePattern = Pattern.compile("[A-Z]{2,}");
             if (timePattern.matcher(words).find()){  // 不能匹配时间
-                System.out.println("匹配到时间并删除");
+//                System.out.println("匹配到时间并删除");
                 iterator.remove();
                 continue;
             }
-            if (words.equals("II M DM B W EO 3")){  // 不能匹配非法字符
+            if (upperCasePattern.matcher(words).find()){  // 不能匹配非车牌字符
                 iterator.remove();
                 continue;
             }
