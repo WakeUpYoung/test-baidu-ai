@@ -44,6 +44,10 @@ public class SingleHandler {
                 iterator.remove();
                 continue;
             }
+            if (words.equals("II M DM B W EO 3")){
+                iterator.remove();
+                continue;
+            }
             if (upperCasePattern.matcher(words).find()){  // 不能匹配非车牌字符
                 iterator.remove();
                 continue;
@@ -57,7 +61,11 @@ public class SingleHandler {
                 return;
             }
             for (CharValue charValue : wordsResult.getCharacters()){
+                Pattern illegal = Pattern.compile("[\\[\\]\\(\\)\\\\]");
                 if (charValue.getCharacter().equals(".")){
+                    continue;
+                }
+                if (illegal.matcher(charValue.getCharacter()).find()){ // 如果是非法字符，则不匹配
                     continue;
                 }
                 if (charValue.getCharacter().equals("O")){ // 如果是字母O ，替换成数字0
