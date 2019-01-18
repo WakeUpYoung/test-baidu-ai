@@ -26,7 +26,7 @@ public class SingleHandler {
         xmlBindBean.setPath(image.getAbsolutePath());
         String str = jsonObject.toString().replace("char", "character");
         // 打印结果
-        System.out.println(str);
+//        System.out.println(str);
         AdvanceResult advanceResult = JSON.parseObject(str, new TypeReference<AdvanceResult>() {
         });
         if (advanceResult.getWordsResult() == null){
@@ -38,7 +38,7 @@ public class SingleHandler {
             String words = wordsResult.getWords();
             Pattern pattern = Pattern.compile("[a-z/]");  // 不匹配小写字母
             Pattern timePattern = Pattern.compile("[0-9]{2}[ ]?:[ ]?[0-9]{2}"); // 不匹配时间
-            Pattern upperCasePattern = Pattern.compile("[A-Z]{2,}");
+            Pattern upperCasePattern = Pattern.compile("[A-Z]{3,}");
             if (timePattern.matcher(words).find()){  // 不能匹配时间
 //                System.out.println("匹配到时间并删除");
                 iterator.remove();
